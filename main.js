@@ -1,4 +1,6 @@
 var testo = prompt("");
+//elimina caratteri speciali
+testo = testo.replace(/[^a-zA-Z ]/g, "");
 //array vuoto che riempirò con le parole
 //inserite dall utente che vuole censurare
 var arrayParole = [];
@@ -14,7 +16,10 @@ console.log("parole da censurare",arrayParole);
 //NOTA slip crea un array quindi testoSplittato gia array avra un array
 // al  suo interno
 var testoSplittato = [];
-testoSplittato.push(testo.split(" "));
+testoSplittato.push(testo.split(' '));
+console.log("testo diviso",testoSplittato);
+//elimina valori vuoti nell array
+testoSplittato = testoSplittato.filter(Boolean);
 console.log("testo diviso",testoSplittato);
 
 //se una parola di testo splittato ê uguale ad una delle parole inserita
